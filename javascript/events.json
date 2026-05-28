@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Tech Innovators Meetup",
+    "date": "2025-06-10",
+    "category": "tech",
+    "seats": 15,
+    "location": "New York"
+  },
+  {
+    "id": 2,
+    "title": "AI & ML Conference",
+    "date": "2025-05-15",
+    "category": "tech",
+    "seats": 0,
+    "location": "Chicago"
+  },
+  {
+    "id": 3,
+    "title": "Frontend Development Bootcamp",
+    "date": "2025-07-01",
+    "category": "tech",
+    "seats": 20,
+    "location": "Los Angeles"
+  },
+  {
+    "id": 4,
+    "title": "Jazz Night",
+    "date": "2025-06-20",
+    "category": "music",
+    "seats": 10,
+    "location": "New York"
+  },
+  {
+    "id": 5,
+    "title": "Watercolor Workshop",
+    "date": "2025-05-30",
+    "category": "art",
+    "seats": 5,
+    "location": "Chicago"
+  }
+]

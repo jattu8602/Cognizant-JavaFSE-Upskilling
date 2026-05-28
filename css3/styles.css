@@ -1,0 +1,302 @@
+/* ===================================================================
+   styles.css — Local Community Event Portal
+   Exercises: 1-11 (CSS3)
+   =================================================================== */
+
+/* ===================================================================
+   Exercise 2: CSS Syntax and Comments
+   =================================================================== */
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===================================================================
+   Exercise 3: Selectors Playground
+   =================================================================== */
+
+/* Element selector — style all h2 elements */
+h2 {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* ID selector — banner styling */
+#mainHeader {
+  background: linear-gradient(135deg, #007BFF, #6610f2);
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* Class selector — event cards */
+.eventCard {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.eventCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Grouping selector */
+h3, p {
+  margin-bottom: 10px;
+}
+
+/* ===================================================================
+   Exercise 4: Color & Background Styling
+   =================================================================== */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  /* HEX color for text, RGBA for background with fallback */
+  background: #f8f9fa;
+  background-image: url('https://via.placeholder.com/1920x1080/f8f9fa/ccc?text=');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Gradient header */
+.gradient-header {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* ===================================================================
+   Exercise 5: Typography: Fonts and Text
+   =================================================================== */
+.typography-demo {
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+.typography-demo h2 {
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.description {
+  font-family: 'Roboto', Georgia, serif;
+  font-size: 1.1em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: justify;
+  letter-spacing: 0.3px;
+}
+
+/* ===================================================================
+   Exercise 6: Link and List Styling
+   =================================================================== */
+/* Pseudo-classes for links */
+a:link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #ff5733;
+}
+
+a:visited {
+  color: #6f42c1;
+}
+
+/* List styling */
+.main-nav ul {
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 0;
+  margin: 20px 0;
+  background: #343a40;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-nav ul li {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 0;
+}
+
+.main-nav ul li a {
+  color: white;
+  font-weight: bold;
+}
+
+.main-nav ul li a:hover {
+  color: #ffc107;
+}
+
+/* ===================================================================
+   Exercise 7: Table Styling
+   =================================================================== */
+.events-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.events-table th, .events-table td {
+  border: 1px solid #dee2e6;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.events-table th {
+  background: #007BFF;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Zebra striping */
+.events-table tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+.events-table tbody tr:hover {
+  background: #e9ecef;
+}
+
+/* ===================================================================
+   Exercise 8: Box Model & Layout Control
+   =================================================================== */
+.box-model-demo {
+  border: 2px solid #007BFF;
+  padding: 25px;
+  margin: 20px 0;
+  background: white;
+  border-radius: 8px;
+  outline: 3px solid rgba(0, 123, 255, 0.2);
+  outline-offset: 3px;
+}
+
+/* Compare visibility:hidden vs display:none */
+.hidden-visibility {
+  visibility: hidden;
+}
+
+.hidden-display {
+  display: none;
+}
+
+/* ===================================================================
+   Exercise 9: Multiple Columns in Text
+   =================================================================== */
+.multi-column {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid #ccc;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.multi-column h2 {
+  column-span: all;
+  margin-bottom: 15px;
+}
+
+/* ===================================================================
+   Exercise 10: Responsive Web Design with Media Queries
+   =================================================================== */
+/* Flexible grid using Flexbox */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.flex-item {
+  background: #007BFF;
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  flex: 1 1 200px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Stack nav vertically */
+  .main-nav ul li {
+    display: block;
+    text-align: center;
+  }
+
+  /* Reduce image sizes */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Use relative units */
+  h1 {
+    font-size: 6vw;
+  }
+
+  .flex-item {
+    flex: 1 1 100%;
+  }
+
+  /* Single column on mobile */
+  .multi-column {
+    column-count: 1;
+  }
+}
+/* ===================================================================
+   Exercise 11: Debug and Test with Dev Tools and VS Code
+   =================================================================== */
+.debug-section {
+  background: #e2e3e5;
+  border: 1px dashed #6c757d;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+/* Instructions:
+   1. Use Chrome's device toolbar (F12 > Toggle Device Toolbar) to simulate phones/tablets.
+   2. Inspect any element to see computed styles and the box model diagram.
+   3. Modify CSS values live and observe changes.
+   4. Network tab shows styles.css loading status.
+*/

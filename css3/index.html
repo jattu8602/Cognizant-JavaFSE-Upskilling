@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Portal — CSS3 Edition</title>
+  <!-- Ex1: External stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Ex5: Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Ex1: Internal styles -->
+  <style>
+    body {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Ex1: Inline style -->
+  <h1 style="color: red;">Local Community Event Portal — CSS3 Styling</h1>
+
+  <!-- Ex3: ID selector target -->
+  <div id="mainHeader">
+    <h2>Your City Events Hub</h2>
+  </div>
+
+  <!-- Ex3: Class selector target -->
+  <div class="eventCard">
+    <h3>Tech Meetup</h3>
+    <p>Join us for an evening of tech talks and networking.</p>
+  </div>
+  <div class="eventCard">
+    <h3>Music Night</h3>
+    <p>Live performances from local artists.</p>
+  </div>
+
+  <!-- Ex4: Section with gradient header -->
+  <section class="gradient-header">
+    <h2>Featured Events</h2>
+  </section>
+
+  <!-- Ex5: Typography demo -->
+  <article class="typography-demo">
+    <h2>Community Bulletin</h2>
+    <p class="description">Stay informed about <strong>upcoming events</strong>, workshops, and city announcements. This is a sample article to demonstrate CSS typography properties including font-family, font-size, line-height, letter-spacing, and text-transform.</p>
+  </article>
+
+  <!-- Ex6: Link and list styling -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Ex7: Table styling -->
+  <table class="events-table">
+    <thead>
+      <tr><th>Event</th><th>Date</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Tech Meetup</td><td>Jun 10</td><td>Upcoming</td></tr>
+      <tr><td>AI Conference</td><td>May 15</td><td>Completed</td></tr>
+      <tr><td>Bootcamp</td><td>Jul 1</td><td>Upcoming</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Ex8: Box model demo -->
+  <div class="box-model-demo">
+    <p>This box demonstrates margin, padding, and border properties. Use DevTools to inspect the box model.</p>
+  </div>
+
+  <!-- Ex9: Multi-column layout -->
+  <section class="multi-column">
+    <h2>Community News</h2>
+    <p>The city council has announced new funding for local arts programs. Residents are encouraged to apply for grants to support community events. The deadline for submissions is August 15th. Workshops will be held every Saturday to help applicants prepare their proposals. This initiative aims to foster creativity and bring neighbors together through shared cultural experiences. Stay tuned for more updates on our community blog.</p>
+  </section>
+
+  <!-- Ex10: Responsive flexbox layout -->
+  <div class="flex-container">
+    <div class="flex-item">Card 1</div>
+    <div class="flex-item">Card 2</div>
+    <div class="flex-item">Card 3</div>
+  </div>
+
+  <!-- Ex11: Debug section -->
+  <section class="debug-section">
+    <h2>Debug Info</h2>
+    <p>Open DevTools (F12) to inspect styles, test responsive modes, and check Network tab for CSS loading.</p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="../css3/styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    #welcomeBanner { background: #007BFF; color: white; text-align: center; padding: 20px; }
+    .highlight { background: #ffeeba; padding: 2px 6px; border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    table, th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    .event-img { width: 200px; height: 150px; object-fit: cover; border: 2px solid #007BFF; border-radius: 4px; }
+    form { max-width: 500px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    form label { display: block; margin-top: 10px; font-weight: bold; }
+    form input, form select, form textarea { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    output { display: block; margin-top: 15px; padding: 10px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; }
+    video { max-width: 100%; margin: 20px 0; }
+    footer { background: #333; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#register">Register</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#contact">Contact</a>
+    <a href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <!-- Ex2: Welcome Banner with ID -->
+    <div id="welcomeBanner">
+      <h1>Welcome to the <span style="color: red; font-weight: bold;">Community Event Portal</span></h1>
+      <p>Your gateway to local events, workshops, and meetups.</p>
+    </div>
+
+    <!-- Ex3: Special offer inline span -->
+    <p class="highlight" style="text-align:center;"> Special Offer: <span style="color:red; font-weight:bold;">Early bird registration — 20% off!</span> </p>
+
+    <!-- Events Section -->
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p class="highlight">Check out our latest community events below.</p>
+      <ul>
+        <li><strong>Tech Innovators Meetup</strong> — Jun 10, 2025</li>
+        <li><strong>AI & ML Conference</strong> — May 15, 2025</li>
+        <li><strong>Frontend Bootcamp</strong> — Jul 1, 2025</li>
+      </ul>
+    </section>
+
+    <!-- Ex4: Image Gallery -->
+    <section id="gallery">
+      <h2>Past Event Gallery</h2>
+      <table>
+        <tr>
+          <td><img src="https://via.placeholder.com/200x150/007BFF/fff?text=Tech+Meetup" alt="Tech Meetup" title="Tech Innovators Meetup 2024" class="event-img"></td>
+          <td><img src="https://via.placeholder.com/200x150/28A745/fff?text=AI+Conference" alt="AI Conference" title="AI & ML Conference 2024" class="event-img"></td>
+          <td><img src="https://via.placeholder.com/200x150/FFC107/000?text=Bootcamp" alt="Frontend Bootcamp" title="Frontend Bootcamp 2024" class="event-img"></td>
+        </tr>
+        <tr>
+          <td>Tech Innovators Meetup 2024</td>
+          <td>AI & ML Conference 2024</td>
+          <td>Frontend Bootcamp 2024</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Ex5: Event Registration Form -->
+    <section id="register">
+      <h2>Event Registration</h2>
+      <form id="regForm" onsubmit="return showConfirmation(event)">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required autofocus>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="eventDate">Event Date:</label>
+        <input type="date" id="eventDate" name="eventDate" required>
+
+        <label for="eventType">Event Type:</label>
+        <select id="eventType" name="eventType">
+          <option value="tech">Technology</option>
+          <option value="music">Music</option>
+          <option value="art">Art & Culture</option>
+          <option value="sports">Sports</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Any special requests?"></textarea>
+
+        <button type="submit">Register</button>
+        <output id="regOutput"></output>
+      </form>
+    </section>
+
+    <!-- Ex6: Feedback Section with Event Handling -->
+    <section id="feedback">
+      <h2>Event Feedback</h2>
+      <form id="feedbackForm">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" placeholder="123-456-7890" onblur="validatePhone(this)">
+
+        <label for="feedbackEvent">Select Event:</label>
+        <select id="feedbackEvent" onchange="showEventFee(this)">
+          <option value="">-- Choose --</option>
+          <option value="tech" data-fee="$25">Tech Meetup — $25</option>
+          <option value="music" data-fee="$15">Music Night — $15</option>
+          <option value="art" data-fee="$10">Art Workshop — $10</option>
+        </select>
+        <p>Fee: <span id="eventFee">—</span></p>
+
+        <label for="feedbackText">Your Feedback:</label>
+        <textarea id="feedbackText" rows="4" onkeydown="countChars(this)" placeholder="Share your experience..."></textarea>
+        <p>Characters: <span id="charCount">0</span></p>
+
+        <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+
+        <img src="https://via.placeholder.com/300x200/17A2B8/fff?text=Event+Photo" alt="Event" id="enlargeImg" ondblclick="enlargeImage(this)" style="cursor:pointer; margin-top:15px;">
+      </form>
+    </section>
+
+    <!-- Ex7: Video Invite -->
+    <section id="video">
+      <h2>Event Promo</h2>
+      <video controls oncanplay="document.getElementById('videoStatus').textContent='Video ready to play'" width="600">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p id="videoStatus">Loading video...</p>
+    </section>
+
+    <!-- Ex8: User Preferences -->
+    <section id="preferences">
+      <h2>User Preferences</h2>
+      <label>Preferred Event Type:
+        <select id="prefEventType" onchange="savePreference(this.value)">
+          <option value="tech">Technology</option>
+          <option value="music">Music</option>
+          <option value="art">Art & Culture</option>
+        </select>
+      </label>
+      <button onclick="clearPreferences()">Clear Preferences</button>
+      <p id="prefStatus"></p>
+    </section>
+
+    <!-- Ex9: Geolocation -->
+    <section id="location">
+      <h2>Find Nearby Events</h2>
+      <button onclick="findNearbyEvents()">Find Nearby Events</button>
+      <p id="geoStatus"></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: community@cityportal.com | Phone: (555) 123-4567</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Local City Council. All rights reserved.</p>
+  </footer>
+
+  <!-- Ex10: Debugging — Console logs -->
+  <script>
+    // --- Ex5: Form confirmation ---
+    function showConfirmation(e) {
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      document.getElementById('regOutput').textContent = 'Thank you, ' + name + '! Your registration is confirmed.';
+      console.log('Registration submitted for:', name);
+      return false;
+    }
+
+    // --- Ex6: Phone validation ---
+    function validatePhone(input) {
+      var pattern = /^\d{3}-\d{3}-\d{4}$/;
+      if (!pattern.test(input.value)) {
+        alert('Please enter a valid phone number (e.g., 123-456-7890)');
+        console.warn('Invalid phone number:', input.value);
+      }
+    }
+
+    // --- Ex6: Event fee display ---
+    function showEventFee(select) {
+      var fee = select.options[select.selectedIndex]?.getAttribute('data-fee') || '—';
+      document.getElementById('eventFee').textContent = fee;
+      console.log('Selected event fee:', fee);
+    }
+
+    // --- Ex6: Character count ---
+    function countChars(textarea) {
+      document.getElementById('charCount').textContent = textarea.value.length;
+    }
+
+    // --- Ex6: Feedback submit ---
+    function submitFeedback() {
+      alert('Thank you for your feedback!');
+      console.log('Feedback submitted');
+    }
+
+    // --- Ex6: Double-click enlarge ---
+    function enlargeImage(img) {
+      if (img.style.width === '500px') {
+        img.style.width = '300px';
+      } else {
+        img.style.width = '500px';
+      }
+      console.log('Image enlarged toggled');
+    }
+
+    // --- Ex7: onbeforeunload ---
+    window.onbeforeunload = function() {
+      var msg = document.getElementById('feedbackText');
+      if (msg && msg.value.length > 0) {
+        return 'You have unsaved feedback. Are you sure you want to leave?';
+      }
+    };
+
+    // --- Ex8: localStorage ---
+    function savePreference(value) {
+      localStorage.setItem('preferredEventType', value);
+      document.getElementById('prefStatus').textContent = 'Preference saved: ' + value;
+      console.log('Preference saved to localStorage:', value);
+    }
+
+    function loadPreference() {
+      var saved = localStorage.getItem('preferredEventType');
+      if (saved) {
+        document.getElementById('prefEventType').value = saved;
+        document.getElementById('prefStatus').textContent = 'Loaded preference: ' + saved;
+      }
+    }
+
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      document.getElementById('prefStatus').textContent = 'All preferences cleared.';
+      console.log('localStorage and sessionStorage cleared');
+    }
+
+    loadPreference();
+
+    // --- Ex9: Geolocation ---
+    function findNearbyEvents() {
+      var status = document.getElementById('geoStatus');
+      status.textContent = 'Finding your location...';
+      navigator.geolocation.getCurrentPosition(
+        function(pos) {
+          status.textContent = 'Your location: Lat ' + pos.coords.latitude.toFixed(4) + ', Lon ' + pos.coords.longitude.toFixed(4) + ' (Accuracy: ' + pos.coords.accuracy + 'm)';
+          console.log('Geolocation success:', pos.coords);
+        },
+        function(err) {
+          status.textContent = 'Error: ' + err.message;
+          console.error('Geolocation error:', err);
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    }
+
+    // --- Ex10: Debug logs ---
+    console.log('Community Event Portal loaded successfully.');
+    console.log('Exercises covered: 1-10 (HTML5)');
+  </script>
+</body>
+</html>
